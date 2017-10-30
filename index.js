@@ -40,6 +40,7 @@ bot.Dispatcher.on(Events.MESSAGE_CREATE, (c) => {
   if (!c.message.author.bot && !c.message.content.startsWith(Config.discord.prefix)) {
     Analytics.awardPoints(c.message.author.id, 'messages')
   }
+  if (c.message.channel.id === "294545129245769729") return
   if (c.message.content.indexOf(Config.discord.prefix) === 0) {
     let cmd = c.message.content.substr(Config.discord.prefix.length).split(' ')[0].toLowerCase()
     let suffix
